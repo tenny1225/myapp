@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>国民技术招贤纳士</title>
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <!-- <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <script src="js/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/datas.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+
+      body{
+        margin-bottom:100px;
+        background-color: #F0F3F5;
+      }
+      .title1{
+        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+        color:#ffffff;
+        font-size:60px;
+        font-weight :bold;
+      }
+      .title2{
+        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+        color:#788087;
+        font-size:22px;
+        font-weight :bold;
+      }
+      .title3{
+        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+        color:#ffffff;
+        font-size:15.5px;
+        font-weight :bold;
+      }
+      .title4{
+        color:#ffffff;
+        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size:22px;
+        font-weight :bold;
+        padding-top: 90px;
+
+      }
+
+      .mybtn{
+        width:100%;
+        margin-bottom: 10px;
+        background-color: #F0F3F5;
+        border:0px;
+        text-align: left;
+        font-size: 14px;
+      }
+        /*.carousel-indicators .active{
+        background-color: #788087;
+      }
+    .carousel-indicators li {
+          border: 1px solid #788087;
+      }
+      .carousel-caption{
+        text-shadow: 0 0px 0px rgba(0,0,0,0);
+      }*/
+      .carousel-control.right{
+        background-image:none!important;;
+      }
+      .carousel-control.left{
+        background-image: none!important;;
+      }
+      .btn:focus,
+      .btn:active:focus,
+      .btn.active:focus,
+      .btn.focus,
+      .btn:active.focus,
+      .btn.active.focus {
+          outline: none;
+
+      }
+
+      .blur {
+        filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+        -webkit-filter: blur(20px); /* Chrome, Opera */
+           -moz-filter: blur(20px);
+            -ms-filter: blur(20px);
+                filter: blur(20px);
+
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+    }
+    #typeContainer{
+      background-color:#ffffff;
+      border-radius:5px;
+      //margin-top:90px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left:50px;
+      padding-right:50px;
+      max-width:740px;
+      box-shadow: 0px 0px 2px #aaaaaa
+    }
+    .btn-title{
+      border:0px;
+
+    }
+    .btn-title:focus,
+    .btn-title:hover,
+    .btn-title:active:focus,
+    .btn-title.active:focus,
+    .btn-title.focus,
+    .btn-title:active.focus,
+    .btn-title.active.focus {
+      background-color:#ffffff!important;
+        outline: none;
+    }
+    #main{
+      width:100%;
+      margin: 0;
+      padding:0;
+    }
+    </style>
+  </head>
+<body>
+  <div class="container-fluid" id="main">
+
+  <div class="row" id="windowbar" style="background:url(img/top_bg.png) no-repeat top;background-size:100% 100%;margin:0;">
+
+    <div class="row" id="windowContainer" style="width:100%;margin:0">
+
+        <!-- <div class="col-sm-5 col-sm-offset-2">
+       <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-8">
+            <p class="title1" style="width:280px;">
+             加入国民
+            </p>
+          </div>
+          <div class="col-xs-2"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-8">
+            <p  class="title3" style="line-height:1.7;">
+国民技术以塑造网络社会信息安全DNA，服务于国家信息安全战略为历史使命，立足自主可控，打造安全中国“芯”!
+            </p>
+          </div>
+          <div class="col-xs-2"></div>
+        </div>
+
+      </div>
+
+      <div class="visible-sm-block visible-md-block visible-lg-block" id="logoContainer">
+        <table  style="width:250px;height:250px;background-color:#ffffff;">
+          <tr>
+            <td style="vertical-align:middle;text-align:center">
+               <img src="img/logo.png" style="width:240px;"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+     <div class="col-sm-5 col-sm-offset-2">
+      <div class="row" style="margin-top:30px;">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <button class="btn btn-default btn-lg" onclick="scroll()" style="font-weight:bold;color:#788087;background-color:#ffffff;">
+            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;查看职位
+          </button>
+        </div>
+        <div class="col-xs-2"></div>
+      </div>
+    </div> -->
+    <div class="col-md-6">
+      <p class="text-center">
+        <img src="img/zxns.png" id="topImg"/>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <table id="toptable" style="width:100%;">
+        <tr>
+          <td style="vertical-align:middle">
+            <p  class="title3 text-center" style="line-height:1.7;margin-left:20px;margin-right:20px;">
+        国民技术以塑造网络社会信息安全DNA，<br/>服务于国家信息安全战略为历史使命，<br/>立足自主可控，<br/>打造安全中国“芯”!
+            </p>
+            <p class="text-center" style = "margin-top:30px;">
+              <button class="btn btn-default btn-lg" onclick="scrollPage()" style="font-weight:bold;color:#555555;background-color:#ffffff;">
+               查看职位
+              </button>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+
+    </div>
+
+  </div>
+  </div>
+  <div class="container-fluid">
+
+  <div id="typeContainer" class="container" style = "margin-top:60px;">
+
+    <template   id="theTemplate1">
+      <div class="row" id="o1">
+       <div class="col-md-12" style="margin-top:40px;">
+         <button type="button" class="btn btn-default btn-lg btn-title" style="color:#CA161E">
+             <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>&nbsp;<span class="jobType"></span>
+         </button>
+       </div>
+
+      <div class="row" id="jobContainer" style="margin-top:30px;" >
+
+      </div>
+     </div>
+   </template>
+
+
+   <template  id="theTemplate2">
+     <div class="col-md-6">
+       <button type="button" class="btn btn-default btn-lg mybtn" >
+           <span class="jobName" style=" color:#555555;"></span>
+       </button>
+     </div>
+   </template>
+
+  </div>
+ <!--end-->
+  </div>
+
+</body>
+</html>
+<script type="text/javascript">
+var startheight = 0;
+var startWidth = 0;
+$(function(){
+  window.onresize=function(){
+    var windowWidth = $(document.body).width();
+    var windowHeight = $(window).height();
+    if(windowWidth-startWidth==0){
+      if(windowHeight-startheight<30&&windowHeight-startheight>-30){
+        return;
+      }
+    }
+
+    $("#windowbar").css("height",windowHeight);
+    $("#topImg").css("height",windowHeight*0.45);
+    $("#toptable").css("height",windowHeight*0.45);
+    var windowContainerHeight = $("#windowContainer").height();
+    $("#windowContainer").css("margin-top",(windowHeight*0.5)-windowContainerHeight*0.5);
+
+  }
+  init();
+});
+function init(){
+
+
+
+  var windowHeight = $(window).height();
+  startheight = windowHeight
+  var windowWidth = $(window).width();
+  startWidth = windowWidth;
+  $("#windowbar").css("height",windowHeight);
+  $("#topImg").css("height",windowHeight*0.45);
+  $("#toptable").css("height",windowHeight*0.45);
+  var windowContainerHeight = $("#windowContainer").height();
+  $("#windowContainer").css("margin-top",(windowHeight*0.5)-windowContainerHeight*0.5);
+
+
+
+  //var html1 = $('#theTemplate1');
+
+
+  var JobTypes = parseDatas();
+
+  for(var i=0;i<JobTypes.length;i++){
+      var html1 = document.querySelector('#theTemplate1');
+      var type = JobTypes[i];
+      html1.content.querySelector(".jobType").textContent =type.name;
+      if(type.showJobses.length>0){
+        html1.content.querySelector("#jobContainer").innerHTML = "";
+        for(var j=0;j<type.showJobses.length;j++){
+            var job = type.showJobses[j];
+            var html2 = document.querySelector('#theTemplate2');
+            html2.content.querySelector(".jobName").textContent = job.name;
+
+            html2.content.querySelector(".mybtn").setAttribute("onclick","openDetail('"+job.id+"')");
+          //  html2.content.querySelector(".mybtn").setAttribute("onclick","openDetail()");
+            html1.content.querySelector("#jobContainer").appendChild(document.importNode(html2.content, true));
+        }
+      }else{
+          html1.content.querySelector("#jobContainer").innerHTML = "";
+      }
+      $("#typeContainer").append(document.importNode(html1.content, true));
+  }
+
+
+
+
+}
+function scrollPage(){
+  $("html,body").stop(true);
+  var windowHeight = $(window).height();
+  $("html,body").animate({scrollTop: $("#typeContainer").offset().top}, windowHeight);
+}
+function openDetail(id){
+   window.open("detail.html?id="+id);
+}
+
+</script>
