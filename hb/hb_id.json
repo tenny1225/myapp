@@ -1,0 +1,20 @@
+﻿[
+    {
+        "WX_CODE": 1,
+        "OPEN_HB_VIEW_ID": "com.tencent.mm:id/b_b",
+        "HB_DETAIL_TXT_ID": "com.tencent.mm:id/b7v",
+        "HB_DETAIL_SEND_USER": "com.tencent.mm:id/b7r",
+        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/ej",
+        "YU_YIN_BTN": "com.tencent.mm:id/yt",
+        "EDIT_TEXT": "com.tencent.mm:id/yv",
+        "SEND_BTN": "com.tencent.mm:id/z1",
+        "WX_TEXT_LABEL": "android:id/text1",
+        "WX_HEAD_PICTURE": "com.tencent.mm:id/gu",
+        "WX_TIME_LABEL": "com.tencent.mm:id/k",
+        "WX_B_MSG": "com.tencent.mm:id/gw",
+        "WX_HB_NAME": "com.tencent.mm:id/a1b",
+        "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/a_9",
+        "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/a_7",
+        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/a_8"
+    }
+]
