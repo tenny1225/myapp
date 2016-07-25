@@ -1,6 +1,8 @@
 ﻿[
     {
         "WX_CODE": 1,
+        "WEIXIN_HB_NONE":"手慢了，红包派完了",
+        "WEIXIN_HB_TIME_OUT":"该红包已超过24小时。如已领取，可在“我的红包”中查看",
         "OPEN_HB_VIEW_ID": "com.tencent.mm:id/b_b",
         "HB_DETAIL_TXT_ID": "com.tencent.mm:id/b7v",
         "HB_DETAIL_SEND_USER": "com.tencent.mm:id/b7r",
