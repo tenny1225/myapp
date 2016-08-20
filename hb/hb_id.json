@@ -6,7 +6,7 @@
         "OPEN_HB_VIEW_ID": "com.tencent.mm:id/ba_",
         "HB_DETAIL_TXT_ID": "com.tencent.mm:id/b8t",
         "HB_DETAIL_SEND_USER": "com.tencent.mm:id/b8p",
-        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/fb",
+        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/ex",
         "YU_YIN_BTN": "com.tencent.mm:id/z6",
         "EDIT_TEXT": "com.tencent.mm:id/z4",
         "SEND_BTN": "com.tencent.mm:id/z_",
