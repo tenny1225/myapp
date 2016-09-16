@@ -17,7 +17,8 @@
         "WX_HB_NAME": "com.tencent.mm:id/a1m",
         "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/aag",
         "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/aae",
-        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/aaf"
+        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/aaf",
+        "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bak"
     },
     {
         "WX_CODE": 840,
@@ -37,7 +38,8 @@
         "WX_HB_NAME": "com.tencent.mm:id/a1m",
         "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/aag",
         "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/aae",
-        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/aaf"
+        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/aaf",
+        "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bak"
     },
     {
         "WX_CODE": 821,
@@ -57,6 +59,7 @@
         "WX_HB_NAME": "com.tencent.mm:id/a1b",
         "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/a_9",
         "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/a_7",
-        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/a_8"
+        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/a_8",
+         "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bak"
     }
 ]
