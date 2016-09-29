@@ -1,5 +1,26 @@
 ﻿[
     {
+        "WX_CODE": 880,
+        "WEIXIN_HB_NONE":"手慢了，红包派完了",
+        "WEIXIN_HB_TIME_OUT":"该红包已超过24小时。如已领取，可在“我的红包”中查看",
+        "OPEN_HB_VIEW_ID": "com.tencent.mm:id/bdg",
+        "HB_DETAIL_TXT_ID": "com.tencent.mm:id/bb0",
+        "HB_DETAIL_SEND_USER": "com.tencent.mm:id/baw",
+        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/fe",
+        "YU_YIN_BTN": "com.tencent.mm:id/a1q",
+        "EDIT_TEXT": "com.tencent.mm:id/a1o",
+        "SEND_BTN": "com.tencent.mm:id/a1u",
+        "WX_TEXT_LABEL": "android:id/text1",
+        "WX_HEAD_PICTURE": "com.tencent.mm:id/hm",
+        "WX_TIME_LABEL": "com.tencent.mm:id/r",
+        "WX_B_MSG": "com.tencent.mm:id/ho",
+        "WX_HB_NAME": "com.tencent.mm:id/a4d",
+        "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/ad8",
+        "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/ad6",
+        "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/ad7",
+        "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bdk"
+    },
+    {
         "WX_CODE": 861,
         "WEIXIN_HB_NONE":"手慢了，红包派完了",
         "WEIXIN_HB_TIME_OUT":"该红包已超过24小时。如已领取，可在“我的红包”中查看",
@@ -39,7 +60,7 @@
         "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/aag",
         "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/aae",
         "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/aaf",
-        "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bak"
+        "WX_HB_DIALOG_CLOSE":"com.tencent.mm:id/bad"
     },
     {
         "WX_CODE": 821,
