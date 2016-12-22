@@ -1,0 +1,352 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="jquery.min.js"></script>
+    <script src="jquery.touchSwipe.min.js"></script>
+    <script src="snabbt.min.js"></script>
+    <style>
+        html,
+        body,
+        table {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .xyCenter {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+        
+        #bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-filter: blur(10px);
+            filter: blur(10px);
+        }
+        
+        .text-area {
+            margin: 5vh auto;
+            max-width: 400px;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            font-size: 30px;
+            color: #ffffff;
+        }
+        
+        .text-area span {
+            display: inline-block;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            font: 56px "Microsoft YaHei", Helvetica, sans-serif;
+            font-family: "Microsoft YaHei" ! important;
+        }
+        
+        .text-area .text-area-word {
+            position: relative;
+        }
+        
+        .text-area .text-area-letter {
+            opacity: 0;
+        }
+    </style>
+    <title>国民技术恭贺新年</title>
+</head>
+
+<body>
+    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="raw/bg.mp3" style="display: none;">
+</audio>
+    <img src="img/bg.jpg" id="bg" />
+    <div id="p1" style="width:100%;height:100%;">
+
+        <div style="width:100%;height:100%;position:absolute;">
+            <img id="fu" src="img/fu.png" style="width:15%;max-width:120px;" />
+            <img id="t1" src="img/top_right_bg.png" style="width:55%;max-width:465px;position:absolute;top: 0;right:0;opacity:0;" />
+            <img id="b1" src="img/bottom_left_bg.png" style="width:55%;max-width:465px;position:absolute;bottom: 0;left:0;opacity:0;" />
+            <img id="ruyi" src="img/ruyi.png" style="width:15%;max-width:100px;position:absolute;top: 25%;right:10%;opacity: 0;" />
+        </div>
+
+        <table style="position:absolute;">
+            <tr>
+                <td class="xyCenter">
+                    <div class="text-area" color="#ffffff">国民技术</div>
+                    <img id="flower" src="img/flower_text.png" style="width:75%;max-width:1000px;opacity: 0;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="p2" style="width:100%;height:100%;opacity:0;">
+        <table style="position:absolute;">
+            <tr>
+                <td class="xyCenter">
+                    <h3>标题</h3>
+                    <center>
+                        <p style="width:80%;text-align: left;">
+                            国民技术股份有限公司诞生于2000年3月，由深圳市中兴集成电路设计有限责任公司于2009年6月整体转制设立而成，是承担国家“909”超大规模集成电路工程的集成电路设计企业之一。
+                            <br/> 公司总部位于深圳，并在北京和上海设立有研发和支持中心。 国民技术秉承自主创新的理念，以打造创新的技术、创新的产品、创新的市场，向社会和民众提供高价值、高品质的IC产品与方案为目标，积极推动行业和产业链的合作，创造多赢的商业模式。 公司以信息安全、SOC、射频为核心技术发展方向，涵盖从前端到后端全过程的IC设计技术，拥有逾百项自主知识产权，并在多个技术领域具有创新性突破。
+                            <br/> 自成立以来，承担过多项国家“863计划”专项重大课题和发改委高技术产业化项目，荣获十几项省部级技术奖励。
+                            <br/> 为了促进互联网时代现代社会的发展和进步，国民技术在安全、通讯、消费电子三个主流市场贡献着知识财富。
+                            <br/> 全力打造的网络身份认证芯片，是中国首颗量产的具有全自主知识产权的32位CPU核产品，广泛应用于我国金融、税控、海关、电子政务、数字版权保护等领域，处于行业领导地位。
+                            <br/> 国民技术是中国可信计算产业联盟的发起者之一，推出的可信密码模块（TCM）产品和方案是我国信息安全产业重要的自主创新成果，被誉为“中国PC信息安全的DNA”。
+                        </p>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="width:100%;position:absolute;bottom:0;text-align:center;">
+        <img id="slide" src="img/slide.png" style="width:20%;min-width:30px;max-width:90px;opacity: 0;" />
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    $(function() {
+        var imgdefereds = [];
+        $('img').each(function() {
+            var dfd = $.Deferred();
+            $(this).bind('load', function() {
+                dfd.resolve();
+            }).bind('error', function() {
+                //图片加载错误，加入错误处理
+                // dfd.resolve();
+            })
+            if (this.complete) setTimeout(function() {
+                dfd.resolve();
+            }, 1000);
+            imgdefereds.push(dfd);
+        })
+        $.when.apply(null, imgdefereds).done(function() {
+            start();
+        });
+    });
+
+    var slide1 = {
+        fromOpacity: 1,
+        opacity: 0,
+        fromPosition: [0, 0, 0],
+        position: [0, -25, 0],
+        duration: 900,
+        allDone: function() {
+            $("#slide").snabbt(slide1);
+        }
+    };
+
+    function start() {
+        var s = {
+            fromRotation: [0, 0, -20 * Math.PI / 180],
+            rotation: [0, 0, 20 * Math.PI / 180],
+            transformOrigin: [0, -$("#fu").height() / 2, 0],
+            easing: 'ease',
+            duration: 800
+        };
+        var e = {
+            fromRotation: [0, 0, 20 * Math.PI / 180],
+            rotation: [0, 0, -20 * Math.PI / 180],
+            transformOrigin: [0, -$("#fu").height() / 2, 0],
+            easing: 'ease',
+            duration: 800,
+            allDone: function() {
+                $("#fu").snabbt(s).snabbt(e);
+            }
+        };
+        $("#fu")
+            // .snabbt({
+            //         fromPosition: [($(window).width() - $("#fu").width()) / 2, $(window).height(), 0],
+            //         position: [($(window).width() - $("#fu").width()) / 2, ($(window).height() - $("#fu").height()) / 2, 0],
+            //         fromOpacity: 0,
+            //         opacity: 1,
+            //         easing: 'easeOut',
+            //         duration: 1000,
+            //     })
+            //     .snabbt({
+            //         fromPosition: [($(window).width() - $("#fu").width()) / 2, ($(window).height() - $("#fu").height()) / 2, 0],
+            //         position: [0, 0, 0],
+            //         easing: 'easeOut',
+            //         delay: 1000,
+            //         duration: 1000,
+            //     })
+            .snabbt({
+
+                fromRotation: [0, 0, 0],
+                rotation: [0, 0, -20 * Math.PI / 180],
+                transformOrigin: [0, -$("#fu").height() / 2, 0],
+                easing: 'ease',
+                duration: 400,
+                delay: 800
+            }).snabbt(s).snabbt(e);
+
+
+
+        $("#t1").snabbt({
+            fromPosition: [0, -($("#t1").height()), 0],
+            position: [0, 0, 0],
+            fromOpacity: 0,
+            opacity: 1,
+            easing: 'ease',
+            duration: 400,
+            delay: 2200
+        });
+        $("#b1").snabbt({
+            fromPosition: [0, ($("#b1").height()), 0],
+            position: [0, 0, 0],
+            fromOpacity: 0,
+            opacity: 1,
+            easing: 'ease',
+            duration: 400,
+            delay: 2200,
+            allDone: function() {
+                setTimeout(letterWave, 400)
+            }
+        })
+
+
+        $('body').swipe({
+            swipeLeft: function() {
+
+            },
+            swipeRight: function() {
+
+            },
+            swipeUp: function() {
+                if ($("#p1").css("opacity") == 0) {
+                    return;
+                }
+                $("#slide").snabbt("stop");
+                $("#slide").css("opacity", "0");
+                $("#p1").snabbt({
+                    position: [0, -$(window).height(), 0],
+                    fromOpacity: 1,
+                    opacity: 0,
+                    easing: 'ease',
+                    update: function(i, index, total) {
+                        var v = -10 * i + 10;
+                        //$("#bg").css("-webkit-filter", "blur(" + v + "px)");
+                        //$("#bg").css("filter", "blur(" + v + "px)");
+                    }
+                });
+                $("#p2").snabbt({
+                    position: [0, -$(window).height(), 0],
+                    fromOpacity: 0,
+                    opacity: 1,
+                    easing: 'ease',
+
+                });
+
+            },
+            swipeDown: function() {
+                if ($("#p1").css("opacity") == 1) {
+                    return;
+                }
+
+                $("#p1").snabbt({
+                    position: [0, 0, 0],
+                    fromOpacity: 0,
+                    opacity: 1,
+                    easing: 'ease',
+                    update: function(i, index, total) {
+                        var v = 10 * i;
+                        //$("#bg").css("-webkit-filter", "blur(" + v + "px)");
+                        //$("#bg").css("filter", "blur(" + v + "px)");
+                    }
+                });
+                $("#p2").snabbt({
+                    position: [0, 0, 0],
+                    fromOpacity: 1,
+                    opacity: 0,
+                    easing: 'ease',
+                    allDone: function() {
+                        $("#slide").snabbt(slide1);
+                    }
+                });
+
+            }
+        });
+    };
+
+    var element = document.getElementsByClassName('text-area')[0];
+
+    function splitText(element) {
+        var text = element.textContent;
+        var textParts = text.split(' ');
+
+        element.textContent = '';
+        textParts.forEach(function(textPart, i) {
+            var wordSpan = document.createElement('span');
+            wordSpan.className = 'text-area-word';
+
+            var chars = textPart.split('');
+            chars.forEach(function(letter, i) {
+                var letterSpan = document.createElement('span');
+                letterSpan.className = 'text-area-letter';
+                letterSpan.textContent = letter;
+                wordSpan.appendChild(letterSpan);
+            });
+            element.appendChild(wordSpan);
+            if (i !== textParts.length - 1)
+                wordSpan.insertAdjacentHTML('afterEnd', ' ');
+        })
+    }
+
+
+    function unsplitText(element) {
+        element.textContent = element.textContent;
+    }
+
+    var element = document.getElementsByClassName('text-area')[0];
+    splitText(element);
+
+    function letterWave() {
+        var letters = document.querySelectorAll('.text-area-letter');
+
+        for (var i = 0; i < letters.length; i++) {
+            letters[i].style.opacity = 0;
+        }
+
+        snabbt(document.querySelectorAll('.text-area .text-area-letter'), {
+            fromRotation: function(i) {
+                if (i % 2 === 0)
+                    return [-Math.PI / 2, 0, 0];
+                return [Math.PI / 2, 0, 0];
+            },
+            rotation: [0, 0, 0],
+            delay: function(i) {
+                return i * 30
+            },
+            duration: 300,
+            perspective: 1,
+            fromOpacity: 0,
+            opacity: 1,
+            easing: 'spring',
+            springConstant: 0.4,
+            springDeceleration: 0.1,
+            allDone: function() {
+                showContent();
+            }
+        });
+    }
+
+    function showContent() {
+        $("#flower").snabbt({
+            fromOpacity: 0,
+            opacity: 1,
+            duration: 500,
+        });
+        $("#ruyi").snabbt({
+            fromOpacity: 0,
+            opacity: 1,
+            fromPosition: [0, -$("#ruyi").height() / 2, 0],
+            position: [0, 0, 0],
+            duration: 400,
+            delay: 600,
+            allDone: function() {
+                $("#slide").snabbt(slide1);
+            }
+        });
+    }
+</script>
