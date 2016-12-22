@@ -64,7 +64,7 @@
     <title>国民技术恭贺新年</title>
 </head>
 
-<body>
+<body id="wrapper">
 
     <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="raw/bg.mp3" style="display: none;"></audio>
     <img src="img/bg.jpg" id="bg" />
@@ -115,10 +115,17 @@
 </html>
 <script type="text/javascript">
     $(function() {
-        // var list = ['c1'];
-        // var prevent = new PreventOverScroll({
-        //     list: list
-        // });
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        var outer = (isAndroid // do it yourself
+            ?
+            'wrapper' :
+            'c1');
+        var list = [outer];
+        var prevent = new PreventOverScroll({
+            list: list
+        });
 
         var imgdefereds = [];
         $('img').each(function() {
