@@ -108,6 +108,11 @@
 
 </html>
 <script type="text/javascript">
+    document.querySelector('body').addEventListener('touchmove', function(e) {
+        if (!document.querySelector('.bottom').contains(e.target)) {
+            e.preventDefault();
+        }
+    })
     $(function() {
         var imgdefereds = [];
         $('img').each(function() {
