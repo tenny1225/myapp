@@ -110,7 +110,8 @@
             max-height: 45%;
             max-width: 70%;
             border: #ffffff 0.039rem solid;
-            border-radius: 0.01rem
+            border-radius: 0.01rem;
+            display: block;
         }
     </style>
     <title>国民技术年会剪影</title>
@@ -172,7 +173,7 @@
             </div>
             <img id="ry2" src="img/ruyi.png" style="position: absolute;right: 15%;top:23%;width:0.4rem;" />
             <img id="img3" class="pic" src="img/img3.jpg" style="position: relative;top:16%;left:5%;" />
-            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:43%;left: -2%" />
+            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:0;left: 47%" />
         </div>
         <div class="container" id="page5" style="opacity: 1;z-index:98;">
             <div class="container">
@@ -197,9 +198,9 @@
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
             </div>
-            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:15%;left:5%;" />
-            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:17%;left: 23%" />
-            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:19%;left:5%;" />
+            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:12%;left:5%;" />
+            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:14%;left: 23%" />
+            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:15%;left:5%;" />
         </div>
 
         <div class="container" id="page8" style="opacity: 1;z-index:95;">
@@ -451,12 +452,56 @@
                 $("#page" + currentPageIndex).snabbt({
                     start: function() {
                         $("#page" + currentPageIndex).css("opacity", 1);
+                        if (currentPageIndex == 1) {
+                            $("#title").css("opacity", 0);
+                        } else if (currentPageIndex == 2) {
+                            $("#content").css("opacity", 0);
+                        } else if (currentPageIndex == 3) {
+                            $("#img1").css("opacity", 0);
+                            $("#img2").css("opacity", 0);
+                            $("#ry1").css("opacity", 0);
+                        } else if (currentPageIndex == 4) {
+                            $("#img3").css("opacity", 0);
+                            $("#img4").css("opacity", 0);
+                            $("#ry2").css("opacity", 0);
+                        } else if (currentPageIndex == 5) {
+                            $("#img5").css("opacity", 0);
+                            $("#img6").css("opacity", 0);
+                            $("#ry3").css("opacity", 0);
+                        } else if (currentPageIndex == 6) {
+                            $("#img7").css("opacity", 0);
+                            $("#img8").css("opacity", 0);
+                            $("#ry4").css("opacity", 0);
+                        } else if (currentPageIndex == 7) {
+                            $("#img9").css("opacity", 0);
+                            $("#img10").css("opacity", 0);
+                            $("#img11").css("opacity", 0);
+                        } else if (currentPageIndex == 8) {
+
+                        }
                     },
                     fromPosition: [0, -$("#page" + prePageIndex).height(), 0],
                     position: [0, 0, 0],
                     duration: 600,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
+                        if (currentPageIndex == 1) {
+                            page1Animate();
+                        } else if (currentPageIndex == 2) {
+                            page2Animate();
+                        } else if (currentPageIndex == 3) {
+                            page3Animate();
+                        } else if (currentPageIndex == 4) {
+                            page4Animate();
+                        } else if (currentPageIndex == 5) {
+                            page5Animate();
+                        } else if (currentPageIndex == 6) {
+                            page6Animate();
+                        } else if (currentPageIndex == 7) {
+                            page7Animate();
+                        } else if (currentPageIndex == 8) {
+                            page8Animate();
+                        }
                     }
                 });
             }
@@ -466,6 +511,7 @@
     function page1Animate() {
 
         var title = $("#title").text();
+        $("#title").css("opacity", 1);
         $("#title").html("");
         $("#page1").css("opacity", 1);
         for (var i = 0; i < title.length; i++) {
@@ -548,9 +594,9 @@
         $("#img2").css("opacity", 0);
         $("#ry1").css("opacity", 0);
         $("#page3").css("opacity", 1);
-        $("#ry1").snabbt(getSlidePicAnimation(800));
-        $("#img1").snabbt(getOpacityPicAnimation(800));
-        $("#img2").snabbt(getRatatePicAnimation(1700));
+        $("#ry1").snabbt(getSlidePicAnimation(0));
+        $("#img1").snabbt(getOpacityPicAnimation(400));
+        $("#img2").snabbt(getRatatePicAnimation(1200));
 
         //setTimeout(page3AnimateEnd, 3700);
     }
@@ -566,9 +612,9 @@
         $("#img4").css("opacity", 0);
         $("#ry2").css("opacity", 0);
         $("#page4").css("opacity", 1);
-        $("#ry2").snabbt(getSlidePicAnimation(800));
-        $("#img3").snabbt(getOpacityPicAnimation(800));
-        $("#img4").snabbt(getSlidePicAnimation(1700));
+        $("#ry2").snabbt(getSlidePicAnimation(0));
+        $("#img3").snabbt(getOpacityPicAnimation(400));
+        $("#img4").snabbt(getSlidePicAnimation(1200));
         //setTimeout(page4AnimateEnd, 3700);
     }
 
@@ -582,9 +628,9 @@
         $("#img6").css("opacity", 0);
         $("#ry3").css("opacity", 0);
         $("#page5").css("opacity", 1);
-        $("#ry3").snabbt(getSlidePicAnimation(800));
-        $("#img5").snabbt(getSlidePicAnimation(800));
-        $("#img6").snabbt(getRatatePicAnimation(1700));
+        $("#ry3").snabbt(getSlidePicAnimation(0));
+        $("#img5").snabbt(getSlidePicAnimation(400));
+        $("#img6").snabbt(getRatatePicAnimation(1200));
         //setTimeout(page5AnimateEnd, 3700);
     }
 
@@ -598,9 +644,9 @@
         $("#img8").css("opacity", 0);
         $("#ry4").css("opacity", 0);
         $("#page6").css("opacity", 1);
-        $("#ry4").snabbt(getSlidePicAnimation(800));
-        $("#img7").snabbt(getOpacityPicAnimation(800));
-        $("#img8").snabbt(getOpacityPicAnimation(1700));
+        $("#ry4").snabbt(getSlidePicAnimation(0));
+        $("#img7").snabbt(getOpacityPicAnimation(400));
+        $("#img8").snabbt(getOpacityPicAnimation(1200));
         //setTimeout(page6AnimateEnd, 3700);
     }
 
@@ -614,9 +660,9 @@
         $("#img10").css("opacity", 0);
         $("#img11").css("opacity", 0);
         $("#page7").css("opacity", 1);
-        $("#img9").snabbt(getRatatePicAnimation(800));
-        $("#img10").snabbt(getOpacityPicAnimation(1900));
-        $("#img11").snabbt(getSlidePicAnimation(2800));
+        $("#img9").snabbt(getRatatePicAnimation(0));
+        $("#img10").snabbt(getOpacityPicAnimation(400));
+        $("#img11").snabbt(getSlidePicAnimation(1200));
         //setTimeout(page7AnimateEnd, 4600);
     }
 
