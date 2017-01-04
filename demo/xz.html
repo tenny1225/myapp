@@ -112,7 +112,7 @@
 
     <div class="container" id="mainConatiner">
         <img src="img/bg.jpg" id="bg" />
-        <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;z-index: 1003;" />
+        <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
         <div class="container" id="page1" style="opacity:0;z-index:102;">
             <table>
                 <tr>
@@ -184,41 +184,42 @@
 </html>
 <script type="text/javascript">
     $(function() {
-        //$("#mainConatiner").css("width", $(window).width());
+        $("#mainConatiner").css("width", $(window).width());
         //$("#mainConatiner").css("height", $(window).width() * 16 / 9);
+        $("#mainConatiner").css("height", $(window).height());
         imageLoading();
     });
     /*检查图片是否加载完成*/
     function imageLoading() {
-        var loadingText = $("#loadTextConatiner").text().trim();
-        $("#loadTextConatiner").html("");
-        for (var i = 0; i < loadingText.length; i++) {
-            $("#loadTextConatiner").append("<span style='display: inline-block;'>" + loadingText[i] + "</span>")
-        }
+        // var loadingText = $("#loadTextConatiner").text().trim();
+        // $("#loadTextConatiner").html("");
+        // for (var i = 0; i < loadingText.length; i++) {
+        //     $("#loadTextConatiner").append("<span style='display: inline-block;'>" + loadingText[i] + "</span>")
+        // }
 
-        var loading = {
-            fromPosition: [0, 0, 0],
-            position: [0, 10, 0],
-            delay: function(i) {
-                return i * 300;
-            },
-            easing: 'spring',
-            allDone: function() {
-                $("#loadTextConatiner").children().snabbt(loadingEnd);
-            }
-        }
-        var loadingEnd = {
-            fromPosition: [0, 10, 0],
-            position: [0, 0, 0],
-            delay: function(i) {
-                return i * 300;
-            },
-            easing: 'spring',
-            allDone: function() {
-                $("#loadTextConatiner").children().snabbt(loading);
-            }
-        }
-        $("#loadTextConatiner").children().snabbt(loading);
+        // var loading = {
+        //     fromPosition: [0, 0, 0],
+        //     position: [0, 10, 0],
+        //     delay: function(i) {
+        //         return i * 300;
+        //     },
+        //     easing: 'spring',
+        //     allDone: function() {
+        //         $("#loadTextConatiner").children().snabbt(loadingEnd);
+        //     }
+        // }
+        // var loadingEnd = {
+        //     fromPosition: [0, 10, 0],
+        //     position: [0, 0, 0],
+        //     delay: function(i) {
+        //         return i * 300;
+        //     },
+        //     easing: 'spring',
+        //     allDone: function() {
+        //         $("#loadTextConatiner").children().snabbt(loading);
+        //     }
+        // }
+        // $("#loadTextConatiner").children().snabbt(loading);
         particleAnimation();
         var imgdefereds = [];
         $('img').each(function() {
