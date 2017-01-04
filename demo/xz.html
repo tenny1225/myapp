@@ -191,35 +191,6 @@
     });
     /*检查图片是否加载完成*/
     function imageLoading() {
-        // var loadingText = $("#loadTextConatiner").text().trim();
-        // $("#loadTextConatiner").html("");
-        // for (var i = 0; i < loadingText.length; i++) {
-        //     $("#loadTextConatiner").append("<span style='display: inline-block;'>" + loadingText[i] + "</span>")
-        // }
-
-        // var loading = {
-        //     fromPosition: [0, 0, 0],
-        //     position: [0, 10, 0],
-        //     delay: function(i) {
-        //         return i * 300;
-        //     },
-        //     easing: 'spring',
-        //     allDone: function() {
-        //         $("#loadTextConatiner").children().snabbt(loadingEnd);
-        //     }
-        // }
-        // var loadingEnd = {
-        //     fromPosition: [0, 10, 0],
-        //     position: [0, 0, 0],
-        //     delay: function(i) {
-        //         return i * 300;
-        //     },
-        //     easing: 'spring',
-        //     allDone: function() {
-        //         $("#loadTextConatiner").children().snabbt(loading);
-        //     }
-        // }
-        // $("#loadTextConatiner").children().snabbt(loading);
         particleAnimation();
         var imgdefereds = [];
         $('img').each(function() {
@@ -379,6 +350,9 @@
     }
 
     function page4Animate() {
+        $("#mainConatiner").css("width", $(window).width());
+        //$("#mainConatiner").css("height", $(window).width() * 16 / 9);
+        $("#mainConatiner").css("height", $(window).height());
         $("#img3").css("opacity", 0);
         $("#img4").css("opacity", 0);
         $("#ry2").css("opacity", 0);
