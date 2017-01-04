@@ -236,10 +236,7 @@
         //$("#mainConatiner").css("width", $(window).width());
         //$("#mainConatiner").css("height", $(window).width() * 16 / 9);
         //$("#mainConatiner").css("height", $(window).height());
-        var list = ['mainConatiner'];
-        var prevent = new PreventOverScroll({
-            list: list
-        });
+
         imageLoading();
     });
 
@@ -345,6 +342,14 @@
 
 
     function addTouchEvent() {
+        var outer = (ismobile(1) == '1' // do it yourself
+            ?
+            'wrapper' :
+            'mainConatiner');
+        var list = [outer];
+        var prevent = new PreventOverScroll({
+            list: list
+        });
         $('body').swipe({
             swipeLeft: function() {},
             swipeRight: function() {},
@@ -393,6 +398,7 @@
                     },
                     fromPosition: [0, 0, 0],
                     position: [0, -$("#page" + prePageIndex).height(), 0],
+                    duration: 900,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
                         if (currentPageIndex == 1) {
@@ -433,6 +439,7 @@
                     },
                     fromPosition: [0, -$("#page" + prePageIndex).height(), 0],
                     position: [0, 0, 0],
+                    duration: 900,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
                     }
