@@ -167,6 +167,19 @@
             <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:19%;left:5%;" />
         </div>
 
+        <div class="container" id="page8" style="opacity: 0;z-index:96;">
+            <table>
+                <tr>
+                    <td style="vertical-align: middle;text-align: center">
+                        <center>
+                            <p style="width:90%;text-align: center;font-size: 0.12rem">
+                                结尾
+                            </p>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
 
         <div id="loadingContainer" class="container" style="z-index: 1000;background:rgba(255,255,255,0);">
@@ -179,7 +192,9 @@
             </table>
         </div>
     </div>
-
+    <div style="width:100%;position:absolute;bottom:0;text-align:center;z-index: 1001">
+        <img id="slide" src="img/slide.png" style="opacity:0;width:0.3rem;" />
+    </div>
 </body>
 
 </html>
@@ -215,7 +230,7 @@
                 duration: 800,
                 allDone: function() {
                     $("#loadTextConatiner").children().snabbt("stop");
-
+                    addTouchEvent();
                     start();
                 }
             });
@@ -258,9 +273,56 @@
     }
 
     function start() {
-        //page3Animate();
+        var slideAnimate = {
+            fromOpacity: 1,
+            opacity: 0,
+            fromPosition: [0, 0, 0],
+            position: [0, -25, 0],
+            duration: 900,
+            allDone: function() {
+                $("#slide").snabbt(slideAnimate);
+            }
+        };
+        $("#slide").snabbt(slideAnimate);
         page1Animate();
     }
+    var currentPageIndex = 1;
+
+    function addTouchEvent() {
+        $('body').swipe({
+            swipeLeft: function() {},
+            swipeRight: function() {},
+            swipeUp: function() {
+
+                currentPageIndex++;
+                if (currentPageIndex > 8) {
+                    currentPageIndex = 1;
+                }
+                if (currentPageIndex == 1) {
+                    page8AnimateEnd()
+                } else if (currentPageIndex == 2) {
+                    page1AnimateEnd()
+                } else if (currentPageIndex == 3) {
+                    page2AnimateEnd()
+                } else if (currentPageIndex == 4) {
+                    page3AnimateEnd()
+                } else if (currentPageIndex == 5) {
+                    page4AnimateEnd()
+                } else if (currentPageIndex == 6) {
+                    page5AnimateEnd()
+                } else if (currentPageIndex == 7) {
+                    page6AnimateEnd()
+                } else if (currentPageIndex == 8) {
+                    page7AnimateEnd()
+                }
+            },
+            swipeDown: function() {
+                if (currentPageIndex <= 1) {
+                    currentPageIndex = 8;
+                }
+            }
+        });
+    };
 
     function page1Animate() {
 
@@ -288,48 +350,56 @@
             springConstant: 0.2,
             springDeceleration: 0.5,
             allDone: function() {
-                $("#title").children().snabbt({
-                    rotation: function(i) {
-                        if (i % 2 === 0)
-                            return [-Math.PI / 4, 0, 0];
-                        return [Math.PI / 4, 0, 0];
-                    },
-                    fromRotation: [0, 0, 0],
-                    delay: function(i) {
-                        return i * 30
-                    },
-                    duration: 200,
-                    perspective: 5,
-                    fromOpacity: 1,
-                    opacity: 0,
-                    easing: 'spring',
-                    springConstant: 0.2,
-                    springDeceleration: 0.5,
-                    allDone: function() {
-                        $("#page1").css("opacity", 0);
-                    }
-                });
-                setTimeout(page2Animate, 2200);
+                //page1AnimateEnd();
             }
         });
+    }
+
+    function page1AnimateEnd() {
+        $("#title").children().snabbt({
+            rotation: function(i) {
+                if (i % 2 === 0)
+                    return [-Math.PI / 4, 0, 0];
+                return [Math.PI / 4, 0, 0];
+            },
+            fromRotation: [0, 0, 0],
+            delay: function(i) {
+                return i * 30
+            },
+            duration: 200,
+            perspective: 5,
+            fromOpacity: 1,
+            opacity: 0,
+            easing: 'spring',
+            springConstant: 0.2,
+            springDeceleration: 0.5,
+            allDone: function() {
+                $("#page1").css("opacity", 0);
+            }
+        });
+        setTimeout(page2Animate, 2200);
     }
 
     function page2Animate() {
         $("#page2").snabbt({
             fromPosition: [$("#page2").width(), 0, 0],
             position: [0, 0, 0],
-            duration: 300,
+            duration: 400,
             perspective: 5,
             fromOpacity: 0,
             opacity: 1,
             easing: 'spring',
-            springConstant: 0.2,
-            springDeceleration: 0.5,
+            springConstant: 0.9,
+            springDeceleration: 0.1,
             allDone: function() {
-                $("#page2").snabbt(getNonePicAnimation(900));
-                setTimeout(page3Animate, 1700);
+                //page2AnimateEnd();
             }
         });
+    }
+
+    function page2AnimateEnd() {
+        $("#page2").snabbt(getNonePicAnimation(900));
+        setTimeout(page3Animate, 1700);
     }
 
     function page3Animate() {
@@ -338,11 +408,11 @@
         $("#img2").css("opacity", 0);
         $("#ry1").css("opacity", 0);
         $("#page3").css("opacity", 1);
-        $("#ry1").snabbt(getSlidePicAnimation(800))
-        $("#img1").snabbt(getOpacityPicAnimation(800))
-        $("#img2").snabbt(getRatatePicAnimation(1700))
+        $("#ry1").snabbt(getSlidePicAnimation(800));
+        $("#img1").snabbt(getOpacityPicAnimation(800));
+        $("#img2").snabbt(getRatatePicAnimation(1700));
 
-        setTimeout(page3AnimateEnd, 3700);
+        //setTimeout(page3AnimateEnd, 3700);
     }
 
     function page3AnimateEnd() {
@@ -356,10 +426,10 @@
         $("#img4").css("opacity", 0);
         $("#ry2").css("opacity", 0);
         $("#page4").css("opacity", 1);
-        $("#ry2").snabbt(getSlidePicAnimation(800))
+        $("#ry2").snabbt(getSlidePicAnimation(800));
         $("#img3").snabbt(getOpacityPicAnimation(800));
         $("#img4").snabbt(getSlidePicAnimation(1700));
-        setTimeout(page4AnimateEnd, 3700);
+        //setTimeout(page4AnimateEnd, 3700);
     }
 
     function page4AnimateEnd() {
@@ -372,10 +442,10 @@
         $("#img6").css("opacity", 0);
         $("#ry3").css("opacity", 0);
         $("#page5").css("opacity", 1);
-        $("#ry3").snabbt(getSlidePicAnimation(800))
-        $("#img5").snabbt(getSlidePicAnimation(800))
-        $("#img6").snabbt(getRatatePicAnimation(1700))
-        setTimeout(page5AnimateEnd, 3700);
+        $("#ry3").snabbt(getSlidePicAnimation(800));
+        $("#img5").snabbt(getSlidePicAnimation(800));
+        $("#img6").snabbt(getRatatePicAnimation(1700));
+        //setTimeout(page5AnimateEnd, 3700);
     }
 
     function page5AnimateEnd() {
@@ -388,10 +458,10 @@
         $("#img8").css("opacity", 0);
         $("#ry4").css("opacity", 0);
         $("#page6").css("opacity", 1);
-        $("#ry4").snabbt(getSlidePicAnimation(800))
-        $("#img7").snabbt(getOpacityPicAnimation(800))
-        $("#img8").snabbt(getOpacityPicAnimation(1700))
-        setTimeout(page6AnimateEnd, 3700);
+        $("#ry4").snabbt(getSlidePicAnimation(800));
+        $("#img7").snabbt(getOpacityPicAnimation(800));
+        $("#img8").snabbt(getOpacityPicAnimation(1700));
+        //setTimeout(page6AnimateEnd, 3700);
     }
 
     function page6AnimateEnd() {
@@ -404,15 +474,28 @@
         $("#img10").css("opacity", 0);
         $("#img11").css("opacity", 0);
         $("#page7").css("opacity", 1);
-        $("#img9").snabbt(getRatatePicAnimation(800))
-        $("#img10").snabbt(getOpacityPicAnimation(1900))
-        $("#img11").snabbt(getSlidePicAnimation(2800))
-        setTimeout(page7AnimateEnd, 4600);
+        $("#img9").snabbt(getRatatePicAnimation(800));
+        $("#img10").snabbt(getOpacityPicAnimation(1900));
+        $("#img11").snabbt(getSlidePicAnimation(2800));
+        //setTimeout(page7AnimateEnd, 4600);
     }
 
     function page7AnimateEnd() {
         $("#page7").snabbt(getNonePicAnimation(900));
-        setTimeout(page3Animate, 1700);
+        setTimeout(page8Animate, 1700);
+
+    }
+
+    function page8Animate() {
+
+        $("#page8").css("opacity", 1);
+
+        //setTimeout(page8AnimateEnd, 4600);
+    }
+
+    function page8AnimateEnd() {
+        $("#page8").snabbt(getNonePicAnimation(900));
+        setTimeout(page1Animate, 1700);
 
     }
 
