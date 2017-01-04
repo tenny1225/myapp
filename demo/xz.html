@@ -116,7 +116,7 @@
     <div class="container" id="mainConatiner">
         <img src="img/bg.jpg" id="bg" />
         <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
-        <div class="container" id="page1" style="opacity:0;z-index:102;">
+        <div class="container" id="page1" style="opacity:1;z-index:102;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -133,7 +133,7 @@
                 </tr>
             </table>
         </div>
-        <div class="container" id="page2" style="opacity:0;z-index:101;">
+        <div class="container" id="page2" style="opacity:1;z-index:101;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -151,7 +151,7 @@
                 </tr>
             </table>
         </div>
-        <div class="container" id="page3" style="opacity:0;z-index:100;">
+        <div class="container" id="page3" style="opacity:1;z-index:100;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -160,7 +160,7 @@
             <img id="img1" class="pic" src="img/img1.jpg" style="position: relative;top:20%;left:5%;" />
             <img id="img2" class="pic" src="img/img2.jpg" style="position: relative;top:23%;left: 23%" />
         </div>
-        <div class="container" id="page4" style="opacity: 0;z-index:99;">
+        <div class="container" id="page4" style="opacity: 1;z-index:99;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -169,7 +169,7 @@
             <img id="img3" class="pic" src="img/img3.jpg" style="position: relative;top:16%;left:5%;" />
             <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:43%;left: -2%" />
         </div>
-        <div class="container" id="page5" style="opacity: 0;z-index:98;">
+        <div class="container" id="page5" style="opacity: 1;z-index:98;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -178,7 +178,7 @@
             <img id="img5" class="pic" src="img/img5.jpg" style="position: relative;top:20%;left:5%;" />
             <img id="img6" class="pic" src="img/img6.jpg" style="position: relative;top:23%;left: 23%" />
         </div>
-        <div class="container" id="page6" style="opacity: 0;z-index:97;">
+        <div class="container" id="page6" style="opacity: 1;z-index:97;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -187,7 +187,7 @@
             <img id="img7" class="pic" src="img/img7.jpg" style="position: relative;top:20%;left:5%;" />
             <img id="img8" class="pic" src="img/img8.jpg" style="position: relative;top:23%;left: 23%" />
         </div>
-        <div class="container" id="page7" style="opacity: 0;z-index:96;">
+        <div class="container" id="page7" style="opacity: 1;z-index:96;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
                 <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
@@ -197,8 +197,12 @@
             <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:19%;left:5%;" />
         </div>
 
-        <div class="container" id="page8" style="opacity: 0;z-index:95;">
-            <table>
+        <div class="container" id="page8" style="opacity: 1;z-index:95;">
+            <div class="container">
+                <img src="img/bg.jpg" id="bg" />
+                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+            </div>
+            <table class="container">
                 <tr>
                     <td style="vertical-align: middle;text-align: center">
                         <center>
@@ -281,7 +285,7 @@
             $("#loadingContainer").snabbt({
                 fromOpacity: 1,
                 opacity: 0,
-                duration: 800,
+                duration: 600,
                 allDone: function() {
                     $("#loadTextConatiner").children().snabbt("stop");
                     addTouchEvent();
@@ -398,7 +402,7 @@
                     },
                     fromPosition: [0, 0, 0],
                     position: [0, -$("#page" + prePageIndex).height(), 0],
-                    duration: 900,
+                    duration: 600,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
                         if (currentPageIndex == 1) {
@@ -439,7 +443,7 @@
                     },
                     fromPosition: [0, -$("#page" + prePageIndex).height(), 0],
                     position: [0, 0, 0],
-                    duration: 900,
+                    duration: 600,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
                     }
@@ -613,7 +617,7 @@
 
     function page8Animate() {
 
-        $("#page8").css("opacity", 1);
+        //$("#page8").css("opacity", 1);
 
         //setTimeout(page8AnimateEnd, 4600);
     }
