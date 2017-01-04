@@ -166,7 +166,7 @@
             </div>
             <img id="ry2" src="img/ruyi.png" style="position: absolute;right: 15%;top:20%;width:0.4rem;" />
             <img id="img3" class="pic" src="img/img3.jpg" style="position: relative;top:16%;left:5%;" />
-            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:-10%;left: 40%" />
+            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:-10%;left: 45%" />
         </div>
         <div class="container" id="page5" style="opacity: 1;z-index:98;">
             <div class="container">
@@ -191,9 +191,9 @@
                 <img src="img/bg.jpg" id="bg" />
 
             </div>
-            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:10%;left:5%;" />
-            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:11%;left: 17%" />
-            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:12%;left:5%;" />
+            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:6%;left:5%;" />
+            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:8%;left: 17%" />
+            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:10%;left:5%;" />
         </div>
 
         <div class="container" id="page8" style="opacity: 1;z-index:95;">
@@ -202,7 +202,7 @@
 
             </div>
             <div class="container" style="text-align: center;">
-                <img src="img/logo.png" id="l1" style="width: 90%;margin-top:22%;" />
+                <img src="img/logo.png" id="l1" style="width: 90%;margin-top:12%;" />
                 <img src="img/p2017.png" id="l2" style="width: 58%;margin-top:-18%;" />
             </div>
         </div>
@@ -573,9 +573,9 @@
         $("#first1").css("opacity", 0);
         $("#first2").css("opacity", 0);
         $("#first3").css("opacity", 0);
-        $("#first1").snabbt(getSlidePicAnimation(200));
-        $("#first2").snabbt(getOpacityPicAnimation(800));
-        $("#first3").snabbt(getOpacityPicAnimation(1300));
+        $("#first1").snabbt(getSlidePicAnimation(400));
+        $("#first2").snabbt(getOpacityPicAnimation(1500));
+        $("#first3").snabbt(getOpacityPicAnimation(2300));
     }
 
 
@@ -713,7 +713,7 @@
     function page8Animate() {
         $("#l1").css("opacity", 0);
         $("#l2").css("opacity", 0);
-        $("#l1").snabbt(getSlidePicAnimation(0));
+        $("#l1").snabbt(getOpacityAnimation(0));
         $("#l2").snabbt(getOpacityPicAnimation(800));
     }
 
@@ -728,6 +728,21 @@
             fromOpacity: 1,
             opacity: 0,
             duration: 900,
+            delay: delay
+        }
+        return anim;
+    }
+
+    function getOpacityAnimation(delay) {
+        var anim = {
+            fromOpacity: 0,
+            opacity: 1,
+            duration: 900,
+
+            easing: 'spring',
+            springConstant: 0.2,
+            springDeceleration: 0.5,
+
             delay: delay
         }
         return anim;
