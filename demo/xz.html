@@ -401,7 +401,7 @@
                         }
                     },
                     fromPosition: [0, 0, 0],
-                    position: [0, -$("#page" + prePageIndex).height(), 0],
+                    position: [0, -$("#page1").height(), 0],
                     duration: 600,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
@@ -441,7 +441,7 @@
                     start: function() {
                         $("#page" + currentPageIndex).css("opacity", 1);
                     },
-                    fromPosition: [0, -$("#page" + prePageIndex).height(), 0],
+                    fromPosition: [0, -$("#page1").height(), 0],
                     position: [0, 0, 0],
                     duration: 600,
                     allDone: function() {
