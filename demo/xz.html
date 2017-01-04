@@ -109,9 +109,9 @@
         .pic {
             max-height: 45%;
             max-width: 70%;
-            border: #ffffff 0.039rem solid;
-            border-radius: 0.01rem;
             display: block;
+            border-image: url(img/border.png) 32 32 32 32 repeat;
+            border-width: 0.1rem;
         }
     </style>
     <title>国民技术年会剪影</title>
@@ -121,34 +121,27 @@
 
     <div class="container" id="mainConatiner" style="display: none;">
         <img src="img/bg.jpg" id="bg" />
-        <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
         <div class="container" id="page1" style="opacity:1;z-index:102;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
             </div>
-            <table>
-                <tr>
-                    <td style="vertical-align: middle;text-align: center">
-                        <center>
-                            <p id="title" style="width:90%;text-align: center;font-size: 0.22rem;color:#555555">
-                                国民技术年会剪影
-                            </p>
-                        </center>
-                    </td>
-                </tr>
-            </table>
+            <div class="container" style="text-align: center;">
+                <img src="img/first1.png" id="first1" style="width: 95%;margin-top:15%;opacity: 0;" />
+                <img src="img/first2.png" id="first2" style="width: 85%;margin-top:3%;opacity: 0;" />
+                <img src="img/first3.png" id="first3" style="width: 79%;margin-top:10%;opacity: 0;" />
+            </div>
         </div>
         <div class="container" id="page2" style="opacity:1;z-index:101;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
             <table>
                 <tr>
                     <td style="vertical-align: middle;text-align: center">
                         <center>
-                            <p id="content" style="width:90%;text-align: left;font-size: 0.12rem">
+                            <p id="content" style="width:90%;text-align: left;font-size: 0.12rem;color:#ffffff;">
                                 为了促进互联网时代现代社会的发展和进步，国民技术在安全、通讯、消费电子三个主流市场贡献着知识财富。<br/> 全力打造的网络身份认证芯片，是中国首颗量产的具有全自主知识产权的32位CPU核产品，广泛应用于我国金融、税控、海关、电子政务、数字版权保护等领域，处于行业领导地位。
                                 <br/> 国民技术是中国可信计算产业联盟的发起者之一，推出的可信密码模块（TCM）产品和方案是我国信息安全产业重要的自主创新成果，被誉为“中国PC信息安全的DNA”。 <br/> 公司推出的安全存储、移动支付等创新产品和方案，实现了业内独树一帜的技术突破；在CMMB手机电视芯片、TD-LTE射频芯片等方面也取得了市场领先的成果。
                             </p>
@@ -160,65 +153,58 @@
         <div class="container" id="page3" style="opacity:1;z-index:100;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
             <img id="ry1" src="img/ruyi.png" style="position: absolute;left: 0;top:0;width:0.4rem;" />
             <img id="img1" class="pic" src="img/img1.jpg" style="position: relative;top:20%;left:5%;" />
-            <img id="img2" class="pic" src="img/img2.jpg" style="position: relative;top:23%;left: 23%" />
+            <img id="img2" class="pic" src="img/img2.jpg" style="position: relative;top:23%;left: 17%" />
         </div>
         <div class="container" id="page4" style="opacity: 1;z-index:99;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
-            <img id="ry2" src="img/ruyi.png" style="position: absolute;right: 15%;top:23%;width:0.4rem;" />
+            <img id="ry2" src="img/ruyi.png" style="position: absolute;right: 15%;top:20%;width:0.4rem;" />
             <img id="img3" class="pic" src="img/img3.jpg" style="position: relative;top:16%;left:5%;" />
-            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:0;left: 47%" />
+            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:-10%;left: 40%" />
         </div>
         <div class="container" id="page5" style="opacity: 1;z-index:98;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
             <img id="ry3" src="img/ruyi.png" style="position: absolute;left: 0;top:0;width:0.4rem;" />
             <img id="img5" class="pic" src="img/img5.jpg" style="position: relative;top:20%;left:5%;" />
-            <img id="img6" class="pic" src="img/img6.jpg" style="position: relative;top:23%;left: 23%" />
+            <img id="img6" class="pic" src="img/img6.jpg" style="position: relative;top:23%;left: 17%" />
         </div>
         <div class="container" id="page6" style="opacity: 1;z-index:97;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
             <img id="ry4" src="img/ruyi.png" style="position: absolute;left: 0;top:0;width:0.4rem;" />
             <img id="img7" class="pic" src="img/img7.jpg" style="position: relative;top:20%;left:5%;" />
-            <img id="img8" class="pic" src="img/img8.jpg" style="position: relative;top:23%;left: 23%" />
+            <img id="img8" class="pic" src="img/img8.jpg" style="position: relative;top:23%;left: 17%" />
         </div>
         <div class="container" id="page7" style="opacity: 1;z-index:96;">
             <div class="container">
                 <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
             </div>
-            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:12%;left:5%;" />
-            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:14%;left: 23%" />
-            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:15%;left:5%;" />
+            <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:10%;left:5%;" />
+            <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:11%;left: 17%" />
+            <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:12%;left:5%;" />
         </div>
 
         <div class="container" id="page8" style="opacity: 1;z-index:95;">
             <div class="container">
-                <img src="img/bg.jpg" id="bg" />
-                <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+                <img src="img/bg1.jpg" id="bg" />
+
             </div>
-            <table class="container">
-                <tr>
-                    <td style="vertical-align: middle;text-align: center">
-                        <center>
-                            <p style="width:90%;text-align: center;font-size: 0.12rem">
-                                结尾
-                            </p>
-                        </center>
-                    </td>
-                </tr>
-            </table>
+            <div class="container" style="text-align: center;">
+                <img src="img/logo.png" id="l1" style="width: 90%;margin-top:22%;" />
+                <img src="img/p2017.png" id="l2" style="width: 58%;margin-top:-18%;" />
+            </div>
         </div>
 
 
@@ -227,7 +213,7 @@
     <div id="loadingContainer" class="container" style="z-index: 1000;background:rgba(255,255,255,0);">
         <div class="container">
             <img src="img/bg.jpg" id="bg" />
-            <img src="img/top_right_bg.png" style="position: absolute;right: 0;top:0;width:1.8rem;" />
+
         </div>
         <table class="container">
             <tr>
@@ -385,7 +371,9 @@
                     start: function() {
                         $("#page" + currentPageIndex).css("opacity", 1);
                         if (currentPageIndex == 1) {
-                            $("#title").css("opacity", 0);
+                            $("#first1").css("opacity", 0);
+                            $("#first2").css("opacity", 0);
+                            $("#first3").css("opacity", 0);
                         } else if (currentPageIndex == 2) {
                             $("#content").css("opacity", 0);
                         } else if (currentPageIndex == 3) {
@@ -409,7 +397,8 @@
                             $("#img10").css("opacity", 0);
                             $("#img11").css("opacity", 0);
                         } else if (currentPageIndex == 8) {
-
+                            $("#l1").css("opacity", 0);
+                            $("#l2").css("opacity", 0);
                         }
                     },
                     fromPosition: [0, 0, 0],
@@ -439,7 +428,9 @@
                         }
 
                         if (currentPageIndex == 2) {
-                            $("#title").css("opacity", 0);
+                            $("#first1").css("opacity", 0);
+                            $("#first2").css("opacity", 0);
+                            $("#first3").css("opacity", 0);
                         } else if (currentPageIndex == 3) {
                             $("#content").css("opacity", 0);
                         } else if (currentPageIndex == 4) {
@@ -463,7 +454,8 @@
                             $("#img10").css("opacity", 0);
                             $("#img11").css("opacity", 0);
                         } else if (currentPageIndex == 9) {
-
+                            $("#l1").css("opacity", 0);
+                            $("#l2").css("opacity", 0);
                         }
                     }
                 });
@@ -485,7 +477,9 @@
                         $("#page" + currentPageIndex).css("opacity", 1);
 
                         if (currentPageIndex == 1) {
-                            $("#title").css("opacity", 0);
+                            $("#first1").css("opacity", 0);
+                            $("#first2").css("opacity", 0);
+                            $("#first3").css("opacity", 0);
                         } else if (currentPageIndex == 2) {
                             $("#content").css("opacity", 0);
                         } else if (currentPageIndex == 3) {
@@ -509,7 +503,8 @@
                             $("#img10").css("opacity", 0);
                             $("#img11").css("opacity", 0);
                         } else if (currentPageIndex == 8) {
-
+                            $("#l1").css("opacity", 0);
+                            $("#l2").css("opacity", 0);
                         }
                     },
                     fromPosition: [0, -$("#page" + prePageIndex).height(), 0],
@@ -538,7 +533,9 @@
                             page8Animate();
                         }
                         if (currentPageIndex + 1 == 1) {
-                            $("#title").css("opacity", 0);
+                            $("#first1").css("opacity", 0);
+                            $("#first2").css("opacity", 0);
+                            $("#first3").css("opacity", 0);
                         } else if (currentPageIndex + 1 == 2) {
                             $("#content").css("opacity", 0);
                         } else if (currentPageIndex + 1 == 3) {
@@ -562,7 +559,8 @@
                             $("#img10").css("opacity", 0);
                             $("#img11").css("opacity", 0);
                         } else if (currentPageIndex + 1 == 8) {
-
+                            $("#l1").css("opacity", 0);
+                            $("#l2").css("opacity", 0);
                         }
 
                     }
@@ -572,35 +570,12 @@
     };
 
     function page1Animate() {
-
-        var title = $("#title").text();
-        $("#title").css("opacity", 1);
-        $("#title").html("");
-        $("#page1").css("opacity", 1);
-        for (var i = 0; i < title.length; i++) {
-            $("#title").append("<span style='display:inline-block;opacity:0;'>" + title[i] + "</span>")
-        }
-        $("#title").children().snabbt({
-            fromRotation: function(i) {
-                if (i % 2 === 0)
-                    return [-Math.PI / 2, 0, 0];
-                return [Math.PI / 2, 0, 0];
-            },
-            rotation: [0, 0, 0],
-            delay: function(i) {
-                return i * 30
-            },
-            duration: 400,
-            perspective: 5,
-            fromOpacity: 0,
-            opacity: 1,
-            easing: 'spring',
-            springConstant: 0.2,
-            springDeceleration: 0.5,
-            allDone: function() {
-                //page1AnimateEnd();
-            }
-        });
+        $("#first1").css("opacity", 0);
+        $("#first2").css("opacity", 0);
+        $("#first3").css("opacity", 0);
+        $("#first1").snabbt(getSlidePicAnimation(200));
+        $("#first2").snabbt(getOpacityPicAnimation(800));
+        $("#first3").snabbt(getOpacityPicAnimation(1300));
     }
 
 
@@ -736,10 +711,10 @@
     }
 
     function page8Animate() {
-
-        //$("#page8").css("opacity", 1);
-
-        //setTimeout(page8AnimateEnd, 4600);
+        $("#l1").css("opacity", 0);
+        $("#l2").css("opacity", 0);
+        $("#l1").snabbt(getSlidePicAnimation(0));
+        $("#l2").snabbt(getOpacityPicAnimation(800));
     }
 
     function page8AnimateEnd() {
