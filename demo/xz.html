@@ -253,24 +253,10 @@
         imageLoading();
     });
 
-    function ismobile(test) {
-        var u = navigator.userAgent,
-            app = navigator.appVersion;
-        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
-            if (window.location.href.indexOf("?mobile") < 0) {
-                try {
-                    if (/iPhone|mac|iPod|iPad/i.test(navigator.userAgent)) {
-                        return '0';
-                    } else {
-                        return '1';
-                    }
-                } catch (e) {}
-            }
-        } else if (u.indexOf('iPad') > -1) {
-            return '0';
-        } else {
-            return '1';
-        }
+    function isIOS() {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        return !isAndroid;
     };
     /*检查图片是否加载完成*/
     function imageLoading() {
@@ -397,11 +383,10 @@
 
 
     function addTouchEvent() {
-        var outer = (ismobile(1) != '1' // do it yourself
+        var outer = (isIOS // do it yourself
             ?
             'wrapper' :
             'mainConatiner');
-        alert(ismobile(1) == '1');
         var list = [outer];
         var prevent = new PreventOverScroll({
             list: list
