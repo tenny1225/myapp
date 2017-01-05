@@ -118,7 +118,7 @@
 </head>
 
 <body id="wrapper">
-
+    <audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;"></audio>
     <div class="container" id="mainConatiner" style="display: none;">
         <img src="img/bg.jpg" id="bg" />
 
@@ -166,7 +166,7 @@
             </div>
             <img id="ry2" src="img/ruyi.png" style="position: absolute;right: 15%;top:20%;width:0.4rem;" />
             <img id="img3" class="pic" src="img/img3.jpg" style="position: relative;top:16%;left:5%;" />
-            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:-10%;left: 45%" />
+            <img id="img4" class="pic" src="img/img4.jpg" style="position: relative;top:-10%;left: 48%" />
         </div>
         <div class="container" id="page5" style="opacity: 1;z-index:98;">
             <div class="container">
@@ -223,10 +223,20 @@
             </tr>
         </table>
     </div>
-    <div style="width:100%;position:absolute;bottom:0;text-align:center;z-index: 1001">
+    <div style="width:100%;position:absolute;bottom:0;text-align:center;z-index: 1001" id="slideContainer">
         <img id="slide" src="img/slide.png" style="opacity:0;width:0.3rem;" />
     </div>
     <div class="container" id="hertContainer" style="z-index: 1003;">
+
+    </div>
+    <div class="container" id="hertContainer" style="z-index: 1004;">
+        <table style="position: absolute;right:0.2rem;top:0.2rem;width:0.3rem;height: 0.3rem;background-color:rgba(200,200,200,0.5);border: #ffffff solid 1px;border-radius: 0.15rem;opacity: 0;" id="musicContainer">
+            <tr>
+                <td style="vertical-align:middle;text-align: center ">
+                    <img src="img/music.png" style="width:0.2rem;" />
+                </td>
+            </tr>
+        </table>
 
     </div>
 </body>
@@ -288,10 +298,51 @@
 
                     addTouchEvent();
                     start();
+                    musicEvent();
+
                 }
             });
 
         });
+    }
+    var playing = true;
+
+    function musicEvent() {
+        $("#musicContainer").click(function() {
+            if (playing) {
+                m.pause();
+                $("#musicContainer").snabbt("stop");
+            } else {
+                m.play();
+                musicAnimate();
+            }
+            playing = !playing;
+        });
+        $("#musicContainer").snabbt({
+            fromOpacity: 0,
+            opacity: 1,
+            fromRotation: [0, 0, 0],
+            rotation: [0, 0, -Math.PI * 2],
+            duration: 2000,
+            easing: 'linear',
+            allDone: function() {
+                musicAnimate();
+            }
+        });
+
+    }
+
+    function musicAnimate() {
+        var animate = {
+            fromRotation: [0, 0, 0],
+            rotation: [0, 0, -Math.PI * 2],
+            duration: 2000,
+            easing: 'linear',
+            allDone: function() {
+                $("#musicContainer").snabbt(animate)
+            }
+        };
+        $("#musicContainer").snabbt(animate)
     }
 
     function getParticleAnimation(id) {
@@ -426,7 +477,7 @@
                         } else if (currentPageIndex == 8) {
                             page8Animate();
                         }
-
+                        $("#slideContainer").css("display", "block");
                         if (currentPageIndex == 2) {
                             $("#first1").css("opacity", 0);
                             $("#first2").css("opacity", 0);
@@ -453,9 +504,11 @@
                             $("#img9").css("opacity", 0);
                             $("#img10").css("opacity", 0);
                             $("#img11").css("opacity", 0);
+                            $("#slideContainer").css("display", "none");
                         } else if (currentPageIndex == 9) {
                             $("#l1").css("opacity", 0);
                             $("#l2").css("opacity", 0);
+
                         }
                     }
                 });
@@ -512,6 +565,7 @@
                     duration: 600,
                     allDone: function() {
                         $("#page" + prePageIndex).css("opacity", 0);
+                        $("#slideContainer").css("display", "block");
                         for (var i = 0; i <= 11; i++) {
                             $("#img" + i).snabbt("stop");
                         }
