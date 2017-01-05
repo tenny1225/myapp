@@ -242,6 +242,8 @@
 
     </div>
     <audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;position: absolute;"></audio>
+    <div class="container" id="touchContainer" style="z-index: 1005;">
+    </div>
 </body>
 
 </html>
@@ -250,14 +252,7 @@
         //$("#mainConatiner").css("width", $(window).width());
         //$("#mainConatiner").css("height", $(window).width() * 16 / 9);
         //$("#mainConatiner").css("height", $(window).height());
-        var outer = (!isIOS // do it yourself
-            ?
-            'wrapper' :
-            'mainConatiner');
-        var list = [outer];
-        var prevent = new PreventOverScroll({
-            list: list
-        });
+
         imageLoading();
     });
 
@@ -326,7 +321,7 @@
                 musicAnimate();
             }
         });
-        $("#slideContainer").click(function() {
+        $("#slide").click(function() {
             nextPage();
         });
 
@@ -607,8 +602,15 @@
     }
 
     function addTouchEvent() {
-
-        $('body').swipe({
+        var outer = (!isIOS // do it yourself
+            ?
+            'wrapper' :
+            'touchContainer');
+        var list = [outer];
+        var prevent = new PreventOverScroll({
+            list: list
+        });
+        $('#touchContainer').swipe({
             swipeLeft: function() {},
             swipeRight: function() {},
             swipeUp: function() {
