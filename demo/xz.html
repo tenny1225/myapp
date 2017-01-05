@@ -232,10 +232,10 @@
 
     </div>
     <div class="container" id="hertContainer" style="z-index: 1004;">
-        <table style="position: absolute;right:0.2rem;top:0.2rem;width:0.3rem;height: 0.3rem;background-color:rgba(200,200,200,0.5);border: #ffffff solid 1px;border-radius: 0.15rem;opacity: 0;" id="musicContainer">
+        <table style="position: absolute;right:10px;top:10px;width:0.2rem;height:0.2rem;background-color:rgba(200,200,200,0.5);border: #ffffff solid 1px;border-radius:0.1rem;opacity: 0;" id="musicContainer">
             <tr>
                 <td style="vertical-align:middle;text-align: center ">
-                    <img src="img/music.png" style="width:0.2rem;" />
+                    <img src="img/music.png" style="width:100%;" />
                 </td>
             </tr>
         </table>
@@ -397,10 +397,11 @@
 
 
     function addTouchEvent() {
-        var outer = (ismobile(1) == '1' // do it yourself
+        var outer = (ismobile(1) != '1' // do it yourself
             ?
             'wrapper' :
             'mainConatiner');
+        alert(ismobile(1) == '1');
         var list = [outer];
         var prevent = new PreventOverScroll({
             list: list
