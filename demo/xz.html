@@ -243,7 +243,7 @@
             </table>
 
         </div>
-        <audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;position: absolute;"></audio>
+        <!--<audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;position: absolute;"></audio>-->
 
     </div>
 </body>
@@ -274,7 +274,7 @@
                 dfd.resolve();
             }).bind('error', function() {
                 //图片加载错误，加入错误处理
-                // dfd.resolve();
+                dfd.resolve();
             })
             if (this.complete) setTimeout(function() {
                 dfd.resolve();
@@ -289,10 +289,10 @@
                 duration: 600,
                 allDone: function() {
                     $("#loadTextConatiner").children().snabbt("stop");
-
+                    particleAnimation();
                     addTouchEvent();
                     start();
-                    musicEvent();
+                    //musicEvent();
 
                 }
             });
