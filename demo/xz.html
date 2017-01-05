@@ -243,7 +243,7 @@
             </table>
 
         </div>
-        <!--<audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;position: absolute;"></audio>-->
+        <audio id="m" src="raw/bg.mp3" autoplay controls style="display: none;position: absolute;"></audio>
 
     </div>
 </body>
@@ -266,7 +266,7 @@
     /*检查图片是否加载完成*/
     function imageLoading() {
 
-
+        particleAnimation();
         var imgdefereds = [];
         $('img').each(function() {
             var dfd = $.Deferred();
@@ -289,10 +289,10 @@
                 duration: 600,
                 allDone: function() {
                     $("#loadTextConatiner").children().snabbt("stop");
-                    particleAnimation();
+
                     addTouchEvent();
                     start();
-                    //musicEvent();
+                    musicEvent();
 
                 }
             });
