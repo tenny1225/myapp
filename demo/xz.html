@@ -193,9 +193,9 @@
                     <img src="img/bg.jpg" id="bg" />
 
                 </div>
-                <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:6%;left:5%;" />
-                <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:8%;left: 17%" />
-                <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:10%;left:5%;" />
+                <img id="img9" class="pic" src="img/img9.jpg" style="position: relative;top:2%;left:5%;" />
+                <img id="img10" class="pic" src="img/img10.jpg" style="position: relative;top:3%;left: 17%" />
+                <img id="img11" class="pic" src="img/img11.jpg" style="position: relative;top:5%;left:5%;" />
             </div>
 
             <div class="container" id="page8" style="opacity: 1;z-index:95;">
@@ -345,6 +345,7 @@
             start: function() {
                 $(id).css("opacity", "1");
             },
+            fromRotation: [0, 0, (Math.random() - 0.5) * (Math.PI / 3)],
             fromPosition: [(1 - Math.random()) * $(window).width(), -3 * $(id).height(), 0],
             position: [(1 - Math.random()) * $(window).width(), $("#hertContainer").height(), 0],
             duration: 8000 - Math.random() * 4000,
