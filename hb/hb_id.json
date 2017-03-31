@@ -5,7 +5,7 @@
         "OPEN_HB_VIEW_ID": "com.tencent.mm:id/bjj",
         "HB_DETAIL_TXT_ID": "com.tencent.mm:id/bfw",
         "HB_DETAIL_SEND_USER": "com.tencent.mm:id/bfw",
-        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/gw",
+        "WEIXIN_BACK_BTN_ID": "com.tencent.mm:id/gg",
         "YU_YIN_BTN": "com.tencent.mm:id/a3c",
         "EDIT_TEXT": "com.tencent.mm:id/a3b",
         "SEND_BTN": "com.tencent.mm:id/a3b",
@@ -17,7 +17,8 @@
         "WX_CHAT_LIST_MSG_CONTENT": "com.tencent.mm:id/afx",
         "WX_CHAT_LIST_MSG_SEND_USER": "com.tencent.mm:id/afv",
         "WX_CHAT_LIST_MSG_TIME": "com.tencent.mm:id/afw",
-        "WX_HB_DIALOG_CLOSE": "com.tencent.mm:id/bh8"
+        "WX_HB_DIALOG_CLOSE": "com.tencent.mm:id/bh8",
+        "WEIXIN_HB_NOT_OPEN_CLASS_NAME": "com.tencent.mm.plugin.luckymoney.ui.En_fba4b94f"
     },
     {
         "WX_CODE": 880,
